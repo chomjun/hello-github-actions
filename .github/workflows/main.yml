@@ -24,3 +24,14 @@ jobs:
           notification-summary: Your custom notification message 
           notification-color: 17a2b8
           timezone: Asia/Bangkok
+
+  noti2:
+    name: Send message to ms teams
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify 2
+        uses: dhollerbach/github-action-send-message-to-ms-teams@1.0.10
+        with:
+          webhook: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+          message: 'W00t it werked!'
+          
