@@ -12,6 +12,7 @@ jobs:
           MY_NAME: "Mona"
           
   noti:
+    name: MS team noti
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
