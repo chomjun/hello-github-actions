@@ -6,7 +6,13 @@ inputs:
   MY_NAME:
     description: "Who to greet"
     required: true
-    default: "World"
+    default: "World"    
+  github-token:
+    required: true
+    description: Github token
+  webhook-uri:
+    required: true
+    description: MS Teams webhook URI
 
 runs:
   using: "docker"
