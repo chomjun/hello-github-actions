@@ -10,15 +10,7 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Mona"
-
-    steps:
-      - uses: actions/checkout@v2
-      # this is the new step using the ms-teams-notification action
-      - name: Notify dedicated teams channel
-        uses: jdcargile/ms-teams-notification@v1.3
+        if: always()
         with:
           github-token: cGFzc3dvcmQK
-          ms-teams-webhook-uri: https://gablegrp.webhook.office.com/webhookb2/1454a839-a9f4-4ec2-b197-0a91fd0d3e7c@45be8033-beb7-4d4b-ab77-608ee11e6449/IncomingWebhook/401bd3e882ae463683854294f91d5325/a66717ac-b208-460d-95bb-a76c683344f3
-          notification-summary: Your custom notification message 
-          notification-color: 17a2b8
-          timezone: Asia/Bangkok
+          webhook-uri: https://gablegrp.webhook.office.com/webhookb2/1454a839-a9f4-4ec2-b197-0a91fd0d3e7c@45be8033-beb7-4d4b-ab77-608ee11e6449/IncomingWebhook/401bd3e882ae463683854294f91d5325/a66717ac-b208-460d-95bb-a76c683344f3
