@@ -35,3 +35,20 @@ jobs:
           webhook: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
           message: 'W00t it werked!'
           
+#####key-vault#####          
+  kv-lab:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout the repo
+    - uses: actions/checkout@v2
+    - uses: Azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - uses: Azure/get-keyvault-secrets@v1
+      with: 
+        keyvault: "wanchai-kv-lab"
+        #secrets: 'containerPassword, containerUsername'
+        secrets: 'kv-secret-01'
+      id: myGetSecretAction
+    - run: |
+        echo ${{ steps.myGetSecretAction.outputs.containerUsername }}
