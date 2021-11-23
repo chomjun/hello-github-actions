@@ -52,5 +52,6 @@ jobs:
       id: myGetSecretAction
     - run: |
         echo "hello: java"
-        echo "hello: ${{ steps.myGetSecretAction.outputs.kv-secret-01 }}"
+        echo "hello: ${{ steps.myGetSecretAction.outputs.kv-secret-01 }}" >test.txt
+        cat test.txt
         echo "hello: test-lab"
