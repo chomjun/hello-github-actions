@@ -51,4 +51,6 @@ jobs:
         secrets: 'kv-secret-01'
       id: myGetSecretAction
     - run: |
-        echo ${{ steps.myGetSecretAction.outputs.containerUsername }}
+        echo "hello: java"
+        echo "hello: ${{ steps.myGetSecretAction.outputs.containerUsername }}"
+        echo "hello: test-lab"
